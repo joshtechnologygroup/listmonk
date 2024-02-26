@@ -258,7 +258,7 @@
     "import.overwrite": "Overwrite?",
     "import.overwriteHelp": "Overwrite name, attribs, subscription status of existing subscribers?",
     "import.merge": "Merge?",
-    "import.mergeHelp": "Merge attribs of existing subscribers?",
+    "import.mergeHelp": "Merge attributes of existing subscribers?",
     "import.recordsCount": "{num} / {total} records",
     "import.stopImport": "Stop import",
     "import.subscribe": "Subscribe",
