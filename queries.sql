@@ -104,7 +104,9 @@ SELECT id from sub;
 
 -- name: upsert-subscriber
 -- Upserts a subscriber where existing subscribers get their names and attributes overwritten.
--- If $7 = true, update values, otherwise, skip.
+-- If $7 = true, update values, 
+-- If $8 = true, merge values, 
+-- otherwise, skip.
 WITH sub AS (
     INSERT INTO subscribers as s (uuid, email, name, attribs, status)
     VALUES($1, $2, $3, $4, 'enabled')
