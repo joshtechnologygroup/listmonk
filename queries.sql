@@ -104,9 +104,11 @@ SELECT id from sub;
 
 -- name: upsert-subscriber
 -- Upserts a subscriber where existing subscribers get their names and attributes overwritten.
--- If $7 = true, update values, 
--- If $8 = true, merge values, 
+-- If $7 = true, update values,
+-- If $8 = true, merge values,
 -- otherwise, skip.
+-- In PostgreSQL, the || operator is used for concatenating JSON objects.
+-- It merges the key-value pairs from both objects, giving precedence to the right operand in case of conflicts.
 WITH sub AS (
     INSERT INTO subscribers as s (uuid, email, name, attribs, status)
     VALUES($1, $2, $3, $4, 'enabled')
