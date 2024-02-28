@@ -54,6 +54,10 @@ func handleImportSubscribers(c echo.Context) error {
 		return echo.NewHTTPError(http.StatusBadRequest, app.i18n.T("import.invalidDelim"))
 	}
 
+	if (opt.Merge && opt.Overwrite) {
+		return echo.NewHTTPError(http.StatusBadRequest, app.i18n.T("import.mergeOverwriteConflict"))
+	}
+
 	file, err := c.FormFile("file")
 	if err != nil {
 		return echo.NewHTTPError(http.StatusBadRequest,
